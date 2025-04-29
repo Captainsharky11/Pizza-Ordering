@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Piiiiiiiizzzzzza inc.</h1>
+  <h2>Choose Your Size...</h2>
+  <form>
+    <label>
+      <input type="radio" name="size" value="small:10"> Small
+    </label><br>
+    <label>
+      <input type="radio" name="size" value="medium:12" checked> Medium
+    </label><br>
+    <label>
+      <input type="radio" name="size" value="large:13"> Large
+    </label><br>
+
+  <h2>Choose Your Toppings...</h2>
+  <form>
+    <label>
+      <input type="checkbox" name="topping" value="Pepperoni:1.00"> Pepperoni
+    </label><br>
+    <label>
+      <input type="checkbox" name="topping" value="ExtraCheese:.50"> Extra Cheese
+    </label><br>
+    <label>
+      <input type="checkbox" name="topping" value="BBQChicken1.50"> BBQ Chicken
+    </label><br>
+  </form>
+
+
+  <p id = "size"> Size Selected: </p>
+  <p id = "price"> Total Price: </p>
+
+  <script>
+
+  //const large = document.querySelector('input[value="large"]')
+
+  //document.querySelector('input[value="large"]').addEventListener('change',function//(
+
+  //){
+
+  //document.getElementById('size').textContent = "Size: large";
+
+  //})
+
+  const allRadioButtons = document.querySelectorAll('input[name = "size"]');
+  const sizeTag = document.getElementById("size");
+  const priceTag = document.getElementById("price");
+
+  // add eventListener to each radio buttons 
+
+  allRadioButtons.forEach(radio =>{
+  radio.addEventListener('change',() =>{
+  sizeTag.textContent = "Size: "+ radio.value.split(":")[0];
+  priceTag.textContent = "Total Price $ "+ radio.value.split(":")[1];
+  });
+
+  })
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
